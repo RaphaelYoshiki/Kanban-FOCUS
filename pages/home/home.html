@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Quadro Kanban</title>
+    <link rel="icon" href="../../src/icone-focus.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../src/icone-focus.png" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban</title>
+    <link rel="shortcut icon" type="image/jpg" href="../../src/logo positiva vertical.png"/>
+    <!-- Inclusão dos arquivos de estilo CSS -->
+    <link rel="stylesheet" href="style_desktop.css" />
+    <link rel="stylesheet" href="style_tablet.css" />
+    <link rel="stylesheet" href="style_mobile.css" />
+    <link rel="stylesheet" href="style_mobile copy.css" />
+
+
+    <!-- Inclusão do script para funcionalidades de arrastar e soltar -->
+    <script src="dragdrop.js" defer></script>
+    <!-- Inclusão do script para arrastar e soltar para dispositivos moveis -->
+    <script src="DragDropTouch.js"></script>
+
+    <!-- Inclusão do script para funcionalidades do botão de adicionar tarefa -->
+    <script src="taskbutton.js" defer></script>
+
+    <!-- Inclusão do script para funcionalidades da expansão da tarefa -->
+    <script src="cardexpandido.js" defer></script>
+  </head>
+  <body>
+    <!-- Conteúdo principal -->
+    
+    <div class="board">
+      <!-- Logo da Focus -->
+      <img class="logo-image" src="../../src/logo negativa vertical.png" alt="Logo Focus Consultoria" title="Focus Consultoria">
+
+      <p class="board-name">QUADRO DE GERENCIAMENTO DE ATIVIDADES</p>
+
+      <img class="exit-icon" src="../../src/sairL.png" alt="" title="Logout" onclick="logout()">
+      
+      <img class="admIcon" id="admIcon" src="../../src/adm_white.png" alt="Ícone Adm" title="Administrar Cadastros" onclick="admPitch()">
+
+      <!-- Seção de colunas -->
+      <div class="lanes">
+        
+        <!-- Coluna BACKLOG -->
+        <div class="coluna" id="backlog">
+          <h3 class="columnHeader">BACKLOG</h3>
+
+          <!-- Lista de tarefas -->
+          <!-- Botão de expandir o card -->
+          <button class="item" onclick="containerCard(this)" draggable="true">
+            <p class="tasktext">Adm Fin</p>
+            <div class="taskCircle" style="background: #495766"></div>
+          </button>
+          <button class="item" onclick="containerCard(this)" draggable="true">
+            <p class="tasktext">Marketing</p>
+            <div class="taskCircle" style="background: #f6a52d"></div>
+          </button>
+          <button class="item" onclick="containerCard(this)" draggable="true">
+            <p class="tasktext">GEP</p>
+            <div class="taskCircle" style="background: #e53324"></div>
+          </button>
+          <button class="item" onclick="containerCard(this)" draggable="true">
+            <p class="tasktext">Projetos</p>
+            <div class="taskCircle" style="background: #2f993d"></div>
+          </button>
+          <button class="item" onclick="containerCard(this)" draggable="true">
+            <p class="tasktext">Comercial</p>
+            <div class="taskCircle" style="background: #29dbe2"></div>
+          </button>
+          <button class="item" onclick="containerCard(this)" draggable="true">
+            <p class="tasktext">Presidência</p>
+            <div class="taskCircle" style="background: #8b5fa4"></div>
+          </button>
+          <!-- Botão para criar novas tarefas -->
+          <button class="taskbutton" onclick="criarNova()">
+            <p class="tasktext">Adicionar Tarefa</p>
+            <div class="plus"></div>
+          </button>
+        </div>
+
+         <!-- Outras colunas (EM ANDAMENTO, CONCLUÍDO, PENDÊNCIAS) -->
+        <div class="coluna" id="doing">
+          <h3 class="columnHeader">EM ANDAMENTO</h3>
+        </div>
+
+        <div class="coluna" id="review">
+          <h3 class="columnHeader">REVIEW</h3>
+        </div>
+
+        <div class="coluna" id="done">
+          <h3 class="columnHeader">CONCLUÍDO</h3>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+
+  <script src="../../loading.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+  <script src="../../firabaseInit.js"></script>
+  <script src="../../services/general.service.js"></script>
+  <script src="../../services/card.service.js"></script>
+  <script src="../../authGuard.js"></script>
+  <script src="home.js"></script>
+  <script src="validateUser.js"></script>
+
+</html>
+
+<!--Card expandido-->
+<div id="cardEx" class="cardEx">
+  <div class="cardEx-content flex-CR">
+    <div>
+      <img class="logo" src="../../src/logo positiva vertical.png" alt="">
+      <br>
+      <button class="removeButton" onclick="confirmarBox()">
+        <img class="deletarImg" src="../../src/lixo.png" alt="">
+      </button>
+    </div>
+    <div class="flex-R">
+      
+      <div class="containerL">
+        <div id="responsavel" class="flex-C">
+          <p class="textCard">Responsável</p> 
+        </div>
+        <br>
+        <div id="atividade" class="flex-C">
+          <p class="textCard">Atividades</p> 
+        </div>
+        <br>
+        <div id="descricao" class="flex-C">
+          <p class="textCard">Descrição</p> 
+        </div>
+        <br>
+        <div id="data">
+          
+        </div>
+      </div>
+      <div class="containerR" id="containerR">
+        <div id="setores" class="flex-C">
+          <p class="textCard">Setores</p>
+          
+        </div>
+        <div id="MudarColuna" class="flex-C">
+          <p class="textCard">Coluna</p>
+          <div class="backgroundColuna" id="botaoColuna">
+              
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div id="cardEx-content">
+      <button class="exitCard" onclick="closeContainer()">
+        <img class="deletarImg" src="../../src/sair.png" alt="">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="confirmar" class="confirmar">
+  <div class="confirmar-content flex-C">
+    <div>
+      <p class="textConfirmar">Deseja deletar a tarefa?</h1>
+    </div>
+    <br>
+    <div class="flex-R">
+      <button class="confirmarButton" onclick="deletar()">
+        <p class="setortext">Deletar</p>
+      </button>
+      <button class="cancelarButton" onclick="cancelar()">
+        <p class="setortext">Cancelar</p>
+      </button>
+    </div>
+  </div>
+</div>

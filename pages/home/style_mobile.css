@@ -1,0 +1,624 @@
+@font-face {
+  font-family: Aileron;
+  src:  url('../../fonts/aileron/Aileron-Regular.otf');
+}
+
+@font-face {
+  font-family: ClearSans;
+  src:  url('../../fonts/clearsans/ClearSans-Medium.ttf');
+}
+
+@font-face {
+  font-family: Muli;
+  src:  url('../../fonts/muli/Muli.ttf');
+}
+
+/* Estilos para smartphones */
+@media screen and (max-width: 800px) {
+*   {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Aileron;
+        font-size: 10px;
+
+        /* Ocultar scrollbar */
+        scrollbar-width: none; /* Para Firefox */
+    }
+
+    /* Ocultar scrollbar para navegadores baseados em Webkit, como Chrome/Safari */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    #dialog, #cardEx {
+        display: none;
+    }
+
+    h3.columnHeader {
+        font-family: Aileron;
+        font-size: 1rem;
+        font-style: italic;
+        font-weight: 600;
+        line-height: 2rem;
+        letter-spacing: 0rem;
+        text-align: center;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .admIcon {
+      width: 5rem;
+      cursor: pointer;
+  
+      position: absolute;
+      top: 2rem;
+      left: 7rem;
+    }
+  
+    .exit-icon {
+      cursor: pointer;
+  
+      float: right;
+      transform: translate(0%, -85%);
+  
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  
+    .clearHome {
+      background: transparent;
+      border: none;
+      color: #FFF4F4;
+  
+      width: auto;
+  
+      margin-bottom: 0px;
+      letter-spacing: .1rem;
+      margin-right: 2rem;
+      margin-left: 2rem;
+      font-size: 1.5rem;
+      font-weight: 900;
+      border-radius: 4rem;
+      cursor: pointer;
+    }
+
+    .board {
+        width: 100vw;
+        height: 100vh;
+        background: #495766;
+        overflow-x: scroll;
+        border: 2rem solid #495766;
+    }
+
+    .board-name {
+        font-family: Aileron;
+        font-size: calc(7vh * 0.8);
+        font-weight: 400;
+        line-height: 3rem;
+        letter-spacing: 0em;
+        text-align: center;
+
+        height: 7vh;
+        width: 60%;
+        transform: translate(30%, 0%);
+
+        color: #FFFFFF;
+    }
+
+    .logo-image {
+        width: 4rem;
+        height: 4.5rem;
+
+        position: relative;
+        float: left;
+    }
+
+    .logo {
+        width: 4vw;
+        height: 4.5vw;
+    }
+
+    .lanes {
+        display: flex;
+        align-items: flex-start;
+        text-align: start;
+        justify-content: center;
+        gap: 1.6rem;
+    
+        padding: 2.4rem 3.2rem;
+        border-radius: .5rem;
+
+        position: absolute;
+        top: 25%;
+    
+        left: 50%;
+        transform: translate(-50%, 0%);
+    
+        overflow: scroll;
+        height: 75%;
+        background-color: #495766;
+    }
+
+    .coluna {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        background: linear-gradient(180deg, #89D5F5 37.61%, rgba(137, 213, 245, 0) 100%, rgba(137, 213, 245, 0.515625) 100%);
+        min-width: 10rem;
+        border-radius: .5rem;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+
+    .tasktext {
+        font-family: ClearSans;
+        font-size: .8rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+        letter-spacing: 0em;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+
+        max-width: 71.8181818181818181818181%;
+    }
+
+    .taskCircle {
+        background: #0032b9;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(320%, -50%);
+    }
+
+    .taskbutton {
+        background: #D9D9D9;
+        padding: 1rem;
+        width: 100%;
+        height: 3.5rem;
+        border-radius: 5rem;
+    
+        position: relative;
+    
+        cursor: pointer;
+        border: none;
+        order: 1;
+    }
+
+    .taskbutton:hover {
+        background-color: #9ba39b;
+    }
+
+    .plus {
+        display:inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0), #0032b9;
+        background-position:center;
+        background-size: 50% .2rem,.2rem 50%;
+        background-repeat:no-repeat;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(120%, -50%);
+    }
+
+    .is-dragging {
+        opacity: 0.5;
+        scale: 1.05;
+        box-shadow: 0rem .5rem 1.5rem rgba(0, 0, 0, 0.25);
+        background: #0032b9;
+        color: white;
+    }
+
+    .dialog {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+    .dialog-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 2rem;
+        border-radius: .8rem;
+        
+        border: .5rem solid #f6a52d;
+    }
+
+    .dialog-text {
+        font-family: Inika;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2rem;
+        letter-spacing: 0em;
+    }
+
+    .dialog-button {
+        font-family: Inika;
+        width: 100%;
+        height: 3rem;
+        border-radius: 5rem;
+        float: none;
+    }
+
+    .taskname-box {
+        font-family: ClearSans;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2rem;
+        letter-spacing: 0em;
+        border-radius: .5rem;
+    }
+
+    .item {
+        background: #D9D9D9;
+        padding: 1rem;
+        width: 100%;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .item:hover {
+        background-color: #9ba39b;
+    }
+
+    .cardEx {
+        display: none;
+        position: fixed;
+
+        margin: 0 auto;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        overflow-y: auto; /* Adiciona scroll se necessário */
+    }
+
+    .cardEx-content {
+        position: absolute;
+        width: 90vw;
+        height: 90vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 2rem;
+        border-radius: .8rem;
+      }
+    
+      .tituloCard{
+        font-family: ClearSans;
+        font-size: 2rem;
+        text-align: left;
+        width: 90%;
+        height: 2.5rem;
+        box-sizing: border-box;
+        border: none;
+        resize: none;
+      }
+    
+      .textCard{
+        font-family: Muli;
+        font-size: 1rem;
+        text-align: left; 
+        padding: 0px 10px;   
+      }
+    
+      .flex-CR{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: start;
+      }
+    
+      .flex-C{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+
+        align-items: flex-start;
+        margin-bottom: auto;
+
+        width: 100%;
+      }
+    
+      .flex-R{
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+        height: 90%;
+      }
+    
+      .containerL{
+        background: #ffffff;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        align-items: top;
+
+        margin-right: 1.5rem;
+        float: left;
+      }
+      .containerR{
+        background: #ffffff;
+        width: 30%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        align-items: center;
+
+        margin-left: 1.5rem;
+      }
+      .exitCard {
+        background: #fff;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 3rem;
+        cursor: pointer;
+        float: right;
+        border: none;
+        font-family: ClearSans;
+        font-size: 1.5rem;
+      }
+    
+      .exitCard :focus{
+        outline: thin dotted;
+        outline: 0px auto -webkit-focus-ring-color;
+        outline-offset: 0px;
+      }
+    
+      .exitCard:hover {
+        background-color: #d5d5d5;
+      }
+    
+      .boxComentario{
+        width: 100%;
+        height: 7.5rem;
+        padding: 1.2rem 2rem;
+        box-sizing: border-box;
+        border: 0.2rem solid #ccc;
+        border-radius: 0.4rem;
+        background-color: #f8f8f8;
+        font-size: 1.6rem;
+        resize: none;
+      }
+      .boxAtividade{
+        width: 100%;
+        height: 3rem;
+        padding: 1.2rem 2rem;
+        box-sizing: border-box;
+        border: 0.2rem solid #ccc;
+        border-radius: 0.4rem;
+        background-color: #f8f8f8;
+        font-size: 1.6rem;
+        resize: none;
+      }
+      .boxResponsavel{
+        width: 100%;
+        height: 2rem;
+        padding: 0.6rem 2rem;
+        box-sizing: border-box;
+        border: 0.2rem solid #ccc;
+        border-radius: 0.4rem;
+        background-color: #f8f8f8;
+        font-size: 1.6rem;
+        resize: none;
+      }
+      .data{
+        width: 15rem;
+        height: 3rem;
+        padding: 1.2rem 2rem;
+        box-sizing: border-box;
+        border: 0.2rem solid #ccc;
+        border-radius: 0.4rem;
+        background-color: #f8f8f8;
+        font-size: 1.6rem;
+        resize: none;
+        float: left;
+      }
+    
+      .setorButton {
+        background: #D9D9D9;
+        padding: 1rem;
+        width: 100%;
+        height: 1.5rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+    
+        cursor: pointer;
+      }
+    
+      .setortext {
+        font-family: ClearSans;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: .1rem;
+        letter-spacing: 0em;
+        text-align: center;   
+        position: center;
+      }
+
+      .removeButton {
+        background: #fff;
+        padding: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: none;
+        position: relative;
+    
+        transform: translate(0%, 15%);
+    
+        cursor: pointer;
+      }
+      .removeButton:hover {
+        background-color: #e53224;
+      }    
+    
+      .setorButtonNew {
+        padding: 1rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+    
+        cursor: pointer;
+      }
+    
+      .setortextNew {
+        font-family: ClearSans;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+        letter-spacing: 0em;
+        text-align: center;   
+        position: center;
+      }
+    
+      .logo {
+        width: 3.5rem;
+        height: 3.9rem;
+        float: right;
+
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+      }
+      
+      .deletarImg {
+        width: 1rem;
+        height: 1rem;
+        margin: auto;
+      }
+    
+      .confirmar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    
+      .confirmar-content {
+        position: absolute;
+        width: 30rem;
+        height: 10rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 2rem;
+        border-radius: .8rem;
+      }
+    
+      .textConfirmar{
+        font-family: Muli;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+        letter-spacing: 0em;
+        text-align: center;   
+        position: center;
+      }
+      .confirmarButton {
+        background: transparent;
+        padding: 1rem;
+        width: 12.5rem;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: 0.1rem solid #2b2b2b;
+        position: relative;
+        cursor: pointer;
+      }
+      .confirmarButton:hover {
+        background-color: #e53224;
+      }
+      .cancelarButton {
+        background: transparent;
+        padding: 1rem;
+        width: 12.5rem;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: 0.1rem solid #2b2b2b;
+        position: right;
+        cursor: pointer;
+      }
+      .cancelarButton:hover {
+        background-color: #D9D9D9;
+      }
+    
+    
+      .backgroundColuna{
+        background: #D9D9D9;
+        width: 100%;
+        height: 2rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+        
+        display: flex;
+        flex-direction: row;
+      }
+    
+      .moverButton{
+        background: transparent;
+        width: 5rem;
+        height: 1rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+
+        transform: translate(0% , -20%);
+    
+        cursor: pointer;
+      }
+    
+      .movertext {
+        font-family: ClearSans;
+        font-size: .8rem;
+        font-weight: 400;
+        line-height: .5rem;
+        letter-spacing: 0em;
+        text-align: center;   
+        position: center;
+        margin: auto;
+      }
+    
+      .moverImg {
+        width: 1rem;
+        height: 1rem;
+        margin: auto;
+      }
+}

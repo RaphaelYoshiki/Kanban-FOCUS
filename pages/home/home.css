@@ -1,0 +1,86 @@
+header img {
+    width: 8%;
+    display: none;
+    cursor: pointer;
+}
+
+button {
+    margin-bottom: 0px;
+}
+
+.clearHome {
+    background: transparent;
+    border: none;
+    color: #FFF4F4;
+}
+
+.title {
+    font-family: 'Aileron';
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.card {
+    min-width: 150px;
+    width: -webkit-fill-available;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    color: #FFF4F4;
+    cursor: pointer;
+
+    font-family: 'ClearSans';
+    font-weight: 700;
+
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+}
+
+.card-is-dragging {
+    cursor: move;
+    opacity: 0.7;
+    scale: 1.1;
+
+
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+}
+
+.centralizeHome {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+ul {
+    margin-bottom: 20px;
+}
+
+body .outline {
+    margin-bottom: 0px;
+}
+
+.studio {
+    background: rgb(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+
+
+#idManager {
+    display: none;
+}
+
+.list-item {
+    font-family: 'ClearSans';
+    font-weight: 300;
+}
+
+div .content-container {
+    border-radius: 20px;
+}

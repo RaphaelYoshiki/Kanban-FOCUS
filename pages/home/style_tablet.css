@@ -1,0 +1,557 @@
+@font-face {
+  font-family: Aileron;
+  src:  url('../../fonts/aileron/Aileron-Regular.otf');
+}
+
+@font-face {
+  font-family: ClearSans;
+  src:  url('../../fonts/clearsans/ClearSans-Medium.ttf');
+}
+
+@font-face {
+  font-family: Muli;
+  src:  url('../../fonts/muli/Muli.ttf');
+}
+
+/* Estilos para tablets */
+@media screen and (max-width: 1024px){
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'aileron';
+        font-size: 10px;
+      
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      *::-webkit-scrollbar {
+        display: none;
+      }
+    
+      h3.columnHeader {
+        font-family: Inter;
+        font-size: 1.8rem;
+        font-style: italic;
+        font-weight: 600;
+        line-height: 2.2rem;
+        letter-spacing: 0rem;
+        text-align: center;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+    
+      .admIcon {
+        width: 5rem;
+        cursor: pointer;
+    
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+      }
+    
+      .exit-icon {
+        cursor: pointer;
+    
+        float: right;
+        transform: translate(0%, -80%);
+    
+        width: 5rem;
+        height: 5rem;
+      }
+    
+      .clearHome {
+        background: transparent;
+        border: none;
+        color: #FFF4F4;
+    
+        width: auto;
+    
+        margin-bottom: 0px;
+        letter-spacing: 1.0px;
+        margin-right: 20px;
+        margin-left: 20px;
+        font-size: 15px;
+        font-weight: 900;
+        border-radius: 40px;
+        cursor: pointer;
+      }
+      
+      .board {
+        width: 100vw;
+        height: 100vh;
+        background: #495766;
+        overflow: scroll;
+    
+        border: 2rem solid #495766;
+      }
+    
+      .board-name {
+        font-family: Aileron;
+        font-size: calc(7vh * 0.55);
+        font-weight: 400;
+        line-height: 3.8rem;
+        letter-spacing: 0em;
+        text-align: center;
+
+        height: 7vh;
+        width: 60%;
+        transform: translate(30%, 0%);
+    
+        color: #FFFFFF;
+      }
+    
+      .logo-image {
+        width: 4.8rem;
+        height: 5.2rem;
+    
+        position: relative;
+        float: left;
+      }
+    
+      .lanes {
+        display: flex;
+        align-items: flex-start;
+        text-align: start;
+        justify-content: center;
+        gap: 1.6rem;
+      
+        padding: 2.4rem 3.2rem;
+        border-radius: .5rem;
+
+        position: absolute;
+        top: 15%;
+    
+        left: 50%;
+        transform: translate(-50%, 0%);
+    
+        overflow: scroll;
+        height: 85%;
+      
+        background-color: #495766;
+      }
+      
+      .coluna {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        background: linear-gradient(180deg, #89D5F5 37.61%, rgba(137, 213, 245, 0) 100%, rgba(137, 213, 245, 0.515625) 100%);
+        min-width: 17.5rem;
+        border-radius: .5rem;
+    
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+      }
+    
+      .tasktext {
+        font-family: Inika;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+        letter-spacing: 0em;
+        text-align: center;   
+    
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+      }
+    
+      .taskCircle {
+        background: #0032b9;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(820%, -50%);
+      }
+    
+      .taskbutton {
+        background: #D9D9D9;
+        padding: 1rem;
+        width: 100%;
+        height: 3.5rem;
+        border-radius: 5rem;
+    
+        position: relative;
+    
+        cursor: pointer;
+        border: none;
+        order: 1;
+      }
+      .taskbutton:hover {
+        background-color: #9ba39b;
+      }
+    
+      .plus {
+        display:inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        
+        background:
+          linear-gradient(#fff 0 0),
+          linear-gradient(#fff 0 0),
+          #0032b9;
+        background-position:center;
+        background-size: 50% .2rem,.2rem 50%; /*thickness = 2px, length = 50% (25px)*/
+        background-repeat:no-repeat;
+    
+        border-radius: 50%;
+        
+        position: absolute;
+        top: 50%;
+        transform: translate(375%, -50%);
+      }
+      
+      .is-dragging {
+        opacity: 0.5;
+        scale: 1.05;
+        box-shadow: 0rem .5rem 1.5rem rgba(0, 0, 0, 0.25);
+        background: #0032b9;
+        color: white;
+      }
+    
+      .taskname-box {    
+        font-family: Inika;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+        letter-spacing: 0em;
+        border-radius: .5rem;
+        width: 25rem;
+        height: 5rem;
+        border: none;
+      }
+    
+      .item {
+        background: #D9D9D9;
+        padding: 1rem;
+        width: 100%;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+    
+        cursor: pointer;
+      }
+    
+      .item:hover {
+        background-color: #9ba39b;
+      }
+    
+      .cardEx {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    
+      .cardEx-content {
+        position: absolute;
+        width: 72.5rem;
+        height: 50rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 2rem;
+        border-radius: .8rem;
+      }
+    
+      .tituloCard{
+        font-family: Inika;
+        font-size: 5rem;
+        text-align: left;
+        width: 90%;
+        height: 6rem;
+        box-sizing: border-box;
+        border: none;
+        resize: none;
+      }
+    
+      .textCard{
+        font-family: Inika;
+        font-size: 2rem;
+        text-align: left; 
+        padding: 0px 10px;   
+      }
+    
+      .flex-CR{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: start;
+      }
+    
+      .flex-C{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+      }
+    
+      .flex-R{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    
+      .containerL{
+        background: #ffffff;
+        width: 60%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        align-items: top;
+        
+        margin-right: 1.5rem;
+        float: left;
+    }
+      .containerR{
+        background: #ffffff;
+        width: 30%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        align-items: center;
+
+        margin-left: 1.5rem;
+      }
+      .exitCard {
+        background: #fff;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 3rem;
+        cursor: pointer;
+        float: right;
+        border: none;
+        font-family: Inika;
+        font-size: 1.5rem;
+      }
+    
+      .exitCard :focus{
+        outline: thin dotted;
+        outline: 0px auto -webkit-focus-ring-color;
+        outline-offset: 0px;
+      }
+    
+      .exitCard:hover {
+        background-color: #d5d5d5;
+      }
+      .exitLogin {
+        background: #495766;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 3rem;
+        cursor: pointer;
+        float: right;
+        border: none;
+        font-family: Inika;
+        font-size: 1.5rem;
+      }
+      .exitLogin:hover {
+        background-color: #363f48;
+      }
+
+      .boxComentario{
+        width: 100%;
+        height: 14rem;
+        padding: 1.2rem 2rem;
+        box-sizing: border-box;
+        border: 0.2rem solid #ccc;
+        border-radius: 0.4rem;
+        background-color: #f8f8f8;
+        font-size: 1.6rem;
+        resize: none;
+      }
+      .boxAtividade{
+        width: 100%;
+        height: 3.5rem;
+        padding: 0.6rem 2rem;
+        box-sizing: border-box;
+        border: 0.2rem solid #ccc;
+        border-radius: 0.4rem;
+        background-color: #f8f8f8;
+        font-size: 1.6rem;
+        resize: none;
+      }
+      .boxResponsavel{
+        width: 100%;
+        height: 3.5rem;
+        padding: 0.6rem 2rem;
+        box-sizing: border-box;
+        border: 0.2rem solid #ccc;
+        border-radius: 0.4rem;
+        background-color: #f8f8f8;
+        font-size: 1.6rem;
+        resize: none;
+      }
+      .data{
+        width: 15rem;
+        height: 3rem;
+        padding: 1.2rem 2rem;
+        box-sizing: border-box;
+        border: 0.2rem solid #ccc;
+        border-radius: 0.4rem;
+        background-color: #f8f8f8;
+        font-size: 1.6rem;
+        resize: none;
+      }
+    
+      .setorButton {
+        background: #D9D9D9;
+        padding: 1rem;
+        width: 21rem;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+    
+        cursor: pointer;
+      }
+    
+      .setortext {
+        font-family: Inika;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+        letter-spacing: 0em;
+        text-align: center;   
+        position: center;
+      }
+      .removeButton {
+        background: #fff;
+        padding: 1rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+    
+        cursor: pointer;
+      }
+      .removeButton:hover {
+        background-color: #e53224;
+      }
+    
+      .logo {
+        width: 3.5rem;
+        height: 3.75rem;
+        float: right;
+      }
+      .deletarImg {
+        width: 2rem;
+        height: 2rem;
+      }
+    
+      .confirmar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    
+      .confirmar-content {
+        position: absolute;
+        width: 30rem;
+        height: 10rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 2rem;
+        border-radius: .8rem;
+      }
+    
+      .textConfirmar{
+        font-family: Inika;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+        letter-spacing: 0em;
+        text-align: center;   
+        position: center;
+      }
+      .confirmarButton {
+        background: transparent;
+        padding: 1rem;
+        width: 12.5rem;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: 0.1rem solid #2b2b2b;
+        position: relative;
+        cursor: pointer;
+      }
+      .confirmarButton:hover {
+        background-color: #e53224;
+      }
+      .cancelarButton {
+        background: transparent;
+        padding: 1rem;
+        width: 12.5rem;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: 0.1rem solid #2b2b2b;
+        position: right;
+        cursor: pointer;
+      }
+      .cancelarButton:hover {
+        background-color: #D9D9D9;
+      }
+    
+    
+      .backgroundColuna{
+        background: #D9D9D9;
+        width: 21rem;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+        
+        display: flex;
+        flex-direction: row;
+      }
+    
+      .moverButton{
+        background: #D9D9D9;
+        padding: 1rem;
+        width: 5rem;
+        height: 2.8rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+    
+        cursor: pointer;
+      }
+    
+      .movertext {
+        font-family: Inika;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 3.5rem;
+        letter-spacing: 0em;
+        text-align: center;   
+        position: center;
+        margin: auto;
+      }
+    
+      .moverImg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
