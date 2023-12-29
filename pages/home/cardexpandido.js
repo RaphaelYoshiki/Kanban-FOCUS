@@ -306,155 +306,155 @@ function containerCard(clickedElement) {
 
 
       //salvando na variavel card a tarefa atual
-  Card = clickedElement;
-  //salvando na variavel ColunaCard a coluna atual do card
-  ColunaCard = clickedElement.parentNode;
-  //criando o titulo no container do card
-  var titulo = document.createElement("textarea");
-  titulo.className = "tituloCard";
-  titulo.id = "tituloCard";
-  titulo.textContent = clickedElement.querySelector(".tasktext").innerText;
-  localDestino = document.getElementById("cardEx-content");
-  localDestino.appendChild(titulo);
-  //criando a box de comentario no container do card
-  var boxComentario = document.createElement("textarea");
-  boxComentario.className = "boxComentario";
-  boxComentario.id = "boxComentario";
-  localDestino = document.getElementById("descricao");
-  localDestino.appendChild(boxComentario);
-  var comentario = clickedElement.querySelector(".comentario");
-  //criando a box de atividade
-  var boxAtiv = document.createElement("textarea");
-  boxAtiv.className = "boxAtividade";
-  boxAtiv.id = "boxAtiv";
-  localDestino = document.getElementById("atividade");
-  localDestino.appendChild(boxAtiv);
-  var ativ = clickedElement.querySelector(".atividade");
-  //criando a box de responsavel
-  var boxResp = document.createElement("textarea");
-  boxResp.className = "boxResponsavel";
-  boxResp.id = "boxResponsavel";
-  localDestino = document.getElementById("responsavel");
-  localDestino.appendChild(boxResp);
-  var responsavel = clickedElement.querySelector(".responsavel");
+      Card = clickedElement;
+      //salvando na variavel ColunaCard a coluna atual do card
+      ColunaCard = clickedElement.parentNode;
+      //criando o titulo no container do card
+      var titulo = document.createElement("textarea");
+      titulo.className = "tituloCard";
+      titulo.id = "tituloCard";
+      titulo.textContent = clickedElement.querySelector(".tasktext").innerText;
+      localDestino = document.getElementById("cardEx-content");
+      localDestino.appendChild(titulo);
+      //criando a box de comentario no container do card
+      var boxComentario = document.createElement("textarea");
+      boxComentario.className = "boxComentario";
+      boxComentario.id = "boxComentario";
+      localDestino = document.getElementById("descricao");
+      localDestino.appendChild(boxComentario);
+      var comentario = clickedElement.querySelector(".comentario");
+      //criando a box de atividade
+      var boxAtiv = document.createElement("textarea");
+      boxAtiv.className = "boxAtividade";
+      boxAtiv.id = "boxAtiv";
+      localDestino = document.getElementById("atividade");
+      localDestino.appendChild(boxAtiv);
+      var ativ = clickedElement.querySelector(".atividade");
+      //criando a box de responsavel
+      var boxResp = document.createElement("textarea");
+      boxResp.className = "boxResponsavel";
+      boxResp.id = "boxResponsavel";
+      localDestino = document.getElementById("responsavel");
+      localDestino.appendChild(boxResp);
+      var responsavel = clickedElement.querySelector(".responsavel");
 
-  //criando input de calendario
-  var inputCalendario = document.createElement("input");
-  inputCalendario.className = "data";
-  inputCalendario.id = "InputCalendario";
-  inputCalendario.type = "date";
-  localDestino = document.getElementById("data");
-  localDestino.appendChild(inputCalendario);
-  var calendario = clickedElement.querySelector(".calendario");
+      //criando input de calendario
+      var inputCalendario = document.createElement("input");
+      inputCalendario.className = "data";
+      inputCalendario.id = "InputCalendario";
+      inputCalendario.type = "date";
+      localDestino = document.getElementById("data");
+      localDestino.appendChild(inputCalendario);
+      var calendario = clickedElement.querySelector(".calendario");
 
-  //criando botão adm fin
-  botaoAdm = document.createElement("button");
-  criarBotao(botaoAdm, "Adm Fin");
-  botaoMkt = document.createElement("button");
-  criarBotao(botaoMkt, "Marketing");
-  botaoPres = document.createElement("button");
-  criarBotao(botaoPres, "Presidência");
-  botaoGep = document.createElement("button");
-  criarBotao(botaoGep, "GEP");
-  botaoPjt = document.createElement("button");
-  criarBotao(botaoPjt, "Projetos");
-  botaoCom = document.createElement("button");
-  criarBotao(botaoCom, "Comercial");
-  corTitulo = clickedElement.querySelector(".taskCircle");
-  switch(corTitulo.style.backgroundColor)
-  {
-    case "rgb(139, 95, 164)":
-      console.log("pres");
-      botaoPres.style.backgroundColor = "rgb(139, 95, 164)";
-      botaoPres.value = "ativado";
-      setor = "Presidência"
-      break;
-    case "rgb(73, 87, 102)":
-      console.log("Adm");
-      botaoAdm.style.backgroundColor = "rgb(73, 87, 102)";
-      botaoAdm.value = "ativado";
-      setor = "Adm. Financeiro"
-      break;
-    case "rgb(246, 165, 45)":
-      console.log("Mkt");
-      botaoMkt.style.backgroundColor = "rgb(246, 165, 45)";
-      botaoMkt.value = "ativado";
-      setor = "Marketing"
-      break;
-    case "rgb(229, 51, 36)":
-      console.log("GEP");
-      botaoGep.style.backgroundColor = "rgb(229, 51, 36)";
-      botaoGep.value = "ativado";
-      setor = "GEP"
-      break;
-    case "rgb(47, 153, 61)":
-      console.log("Pjt");
-      botaoPjt.style.backgroundColor = "rgb(47, 153, 61)";
-      botaoPjt.value = "ativado";
-      setor = "Projetos"
-      break;
-    case "rgb(41, 219, 226)":
-      console.log("Com");
-      botaoCom.style.backgroundColor = "rgb(41, 219, 226)";
-      botaoCom.value = "ativado";
-      setor = "Comercial"
-      break;
-  }
-  botaoColuna();
+      //criando botão adm fin
+      botaoAdm = document.createElement("button");
+      criarBotao(botaoAdm, "Adm Fin");
+      botaoMkt = document.createElement("button");
+      criarBotao(botaoMkt, "Marketing");
+      botaoPres = document.createElement("button");
+      criarBotao(botaoPres, "Presidência");
+      botaoGep = document.createElement("button");
+      criarBotao(botaoGep, "GEP");
+      botaoPjt = document.createElement("button");
+      criarBotao(botaoPjt, "Projetos");
+      botaoCom = document.createElement("button");
+      criarBotao(botaoCom, "Comercial");
+      corTitulo = clickedElement.querySelector(".taskCircle");
+      switch(corTitulo.style.backgroundColor)
+      {
+        case "rgb(139, 95, 164)":
+          console.log("pres");
+          botaoPres.style.backgroundColor = "rgb(139, 95, 164)";
+          botaoPres.value = "ativado";
+          setor = "Presidência"
+          break;
+        case "rgb(73, 87, 102)":
+          console.log("Adm");
+          botaoAdm.style.backgroundColor = "rgb(73, 87, 102)";
+          botaoAdm.value = "ativado";
+          setor = "Adm. Financeiro"
+          break;
+        case "rgb(246, 165, 45)":
+          console.log("Mkt");
+          botaoMkt.style.backgroundColor = "rgb(246, 165, 45)";
+          botaoMkt.value = "ativado";
+          setor = "Marketing"
+          break;
+        case "rgb(229, 51, 36)":
+          console.log("GEP");
+          botaoGep.style.backgroundColor = "rgb(229, 51, 36)";
+          botaoGep.value = "ativado";
+          setor = "GEP"
+          break;
+        case "rgb(47, 153, 61)":
+          console.log("Pjt");
+          botaoPjt.style.backgroundColor = "rgb(47, 153, 61)";
+          botaoPjt.value = "ativado";
+          setor = "Projetos"
+          break;
+        case "rgb(41, 219, 226)":
+          console.log("Com");
+          botaoCom.style.backgroundColor = "rgb(41, 219, 226)";
+          botaoCom.value = "ativado";
+          setor = "Comercial"
+          break;
+      }
+      botaoColuna();
 
-  if(comentarioJSON)
-  {
-    comentario = comentarioJSON;
-    boxComentario.textContent = comentario;
-  }
-  else
-  {
-    comentario = document.createElement("div");
-    comentario.className = "comentario";
-    comentario.id = "comentario";
-    comentario.style.display = "none";
-    clickedElement.appendChild(comentario);
-  }
-  if(atividadeJSON)
-  {
-    ativ = atividadeJSON;
-    boxAtiv.textContent = ativ;
-    console.log("pres1");
-  }
-  else
-  {
-    ativ = document.createElement("div");
-    ativ.className = "atividade";
-    ativ.style.display = "none";
-    clickedElement.appendChild(ativ);
-  }
-  if(responsavelJSON)
-  {
-    responsavel = responsavelJSON;
-    boxResp.textContent = responsavel;
-  }
-  else
-  {
-    responsavel = document.createElement("div");
-    responsavel.className = "responsavel";
-    responsavel.style.display = "none";
-    clickedElement.appendChild(responsavel);
-  }
-  if(calendarioJSON)
-  {
-    calendario = calendarioJSON;
-    console.log(calendario);
-    inputCalendario.value = calendario;
-  }
-  else
-  {
-    inputCalendario.value = "aaaa-mm-dd";
-    calendario = document.createElement("div");
-    calendario.className = "calendario";
-    calendario.id = "calendario";
-    calendario.style.display = "none";
-    clickedElement.appendChild(calendario);
-  }
+      if(comentarioJSON)
+      {
+        comentario = comentarioJSON;
+        boxComentario.textContent = comentario;
+      }
+      else
+      {
+        comentario = document.createElement("div");
+        comentario.className = "comentario";
+        comentario.id = "comentario";
+        comentario.style.display = "none";
+        clickedElement.appendChild(comentario);
+      }
+      if(atividadeJSON)
+      {
+        ativ = atividadeJSON;
+        boxAtiv.textContent = ativ;
+        console.log("pres1");
+      }
+      else
+      {
+        ativ = document.createElement("div");
+        ativ.className = "atividade";
+        ativ.style.display = "none";
+        clickedElement.appendChild(ativ);
+      }
+      if(responsavelJSON)
+      {
+        responsavel = responsavelJSON;
+        boxResp.textContent = responsavel;
+      }
+      else
+      {
+        responsavel = document.createElement("div");
+        responsavel.className = "responsavel";
+        responsavel.style.display = "none";
+        clickedElement.appendChild(responsavel);
+      }
+      if(calendarioJSON)
+      {
+        calendario = calendarioJSON;
+        console.log(calendario);
+        inputCalendario.value = calendario;
+      }
+      else
+      {
+        inputCalendario.value = "aaaa-mm-dd";
+        calendario = document.createElement("div");
+        calendario.className = "calendario";
+        calendario.id = "calendario";
+        calendario.style.display = "none";
+        clickedElement.appendChild(calendario);
+      }
     })
     .catch(error => {
       hideLoading()
@@ -464,191 +464,156 @@ function containerCard(clickedElement) {
   }
   else {
     //salvando na variavel card a tarefa atual
-  Card = clickedElement;
-  //salvando na variavel ColunaCard a coluna atual do card
-  ColunaCard = clickedElement.parentNode;
-  //criando o titulo no container do card
-  var titulo = document.createElement("textarea");
-  titulo.className = "tituloCard";
-  titulo.id = "tituloCard";
-  titulo.textContent = clickedElement.querySelector(".tasktext").innerText;
-  localDestino = document.getElementById("cardEx-content");
-  localDestino.appendChild(titulo);
-  //criando a box de comentario no container do card
-  var boxComentario = document.createElement("textarea");
-  boxComentario.className = "boxComentario";
-  boxComentario.id = "boxComentario";
-  localDestino = document.getElementById("descricao");
-  localDestino.appendChild(boxComentario);
-  var comentario = clickedElement.querySelector(".comentario");
-  //criando a box de atividade
-  var boxAtiv = document.createElement("textarea");
-  boxAtiv.className = "boxAtividade";
-  boxAtiv.id = "boxAtiv";
-  localDestino = document.getElementById("atividade");
-  localDestino.appendChild(boxAtiv);
-  var ativ = clickedElement.querySelector(".atividade");
-  //criando a box de responsavel
-  var boxResp = document.createElement("textarea");
-  boxResp.className = "boxResponsavel";
-  boxResp.id = "boxResponsavel";
-  localDestino = document.getElementById("responsavel");
-  localDestino.appendChild(boxResp);
-  var responsavel = clickedElement.querySelector(".responsavel");
+    Card = clickedElement;
+    //salvando na variavel ColunaCard a coluna atual do card
+    ColunaCard = clickedElement.parentNode;
+    //criando o titulo no container do card
+    var titulo = document.createElement("textarea");
+    titulo.className = "tituloCard";
+    titulo.id = "tituloCard";
+    titulo.textContent = clickedElement.querySelector(".tasktext").innerText;
+    localDestino = document.getElementById("cardEx-content");
+    localDestino.appendChild(titulo);
+    //criando a box de comentario no container do card
+    var boxComentario = document.createElement("textarea");
+    boxComentario.className = "boxComentario";
+    boxComentario.id = "boxComentario";
+    localDestino = document.getElementById("descricao");
+    localDestino.appendChild(boxComentario);
+    var comentario = clickedElement.querySelector(".comentario");
+    //criando a box de atividade
+    var boxAtiv = document.createElement("textarea");
+    boxAtiv.className = "boxAtividade";
+    boxAtiv.id = "boxAtiv";
+    localDestino = document.getElementById("atividade");
+    localDestino.appendChild(boxAtiv);
+    var ativ = clickedElement.querySelector(".atividade");
+    //criando a box de responsavel
+    var boxResp = document.createElement("textarea");
+    boxResp.className = "boxResponsavel";
+    boxResp.id = "boxResponsavel";
+    localDestino = document.getElementById("responsavel");
+    localDestino.appendChild(boxResp);
+    var responsavel = clickedElement.querySelector(".responsavel");
 
-  //criando input de calendario
-  var inputCalendario = document.createElement("input");
-  inputCalendario.className = "data";
-  inputCalendario.id = "InputCalendario";
-  inputCalendario.type = "date";
-  localDestino = document.getElementById("data");
-  localDestino.appendChild(inputCalendario);
-  var calendario = clickedElement.querySelector(".calendario");
+    //criando input de calendario
+    var inputCalendario = document.createElement("input");
+    inputCalendario.className = "data";
+    inputCalendario.id = "InputCalendario";
+    inputCalendario.type = "date";
+    localDestino = document.getElementById("data");
+    localDestino.appendChild(inputCalendario);
+    var calendario = clickedElement.querySelector(".calendario");
 
-  //criando botão adm fin
-  botaoAdm = document.createElement("button");
-  criarBotao(botaoAdm, "Adm Fin");
-  botaoMkt = document.createElement("button");
-  criarBotao(botaoMkt, "Marketing");
-  botaoPres = document.createElement("button");
-  criarBotao(botaoPres, "Presidência");
-  botaoGep = document.createElement("button");
-  criarBotao(botaoGep, "GEP");
-  botaoPjt = document.createElement("button");
-  criarBotao(botaoPjt, "Projetos");
-  botaoCom = document.createElement("button");
-  criarBotao(botaoCom, "Comercial");
-  corTitulo = clickedElement.querySelector(".taskCircle");
-  switch(corTitulo.style.backgroundColor)
-  {
-    case "rgb(139, 95, 164)":
-      console.log("pres");
-      botaoPres.style.backgroundColor = "rgb(139, 95, 164)";
-      botaoPres.value = "ativado";
-      setor = "Presidência"
-      break;
-    case "rgb(73, 87, 102)":
-      console.log("Adm");
-      botaoAdm.style.backgroundColor = "rgb(73, 87, 102)";
-      botaoAdm.value = "ativado";
-      setor = "Adm. Financeiro"
-      break;
-    case "rgb(246, 165, 45)":
-      console.log("Mkt");
-      botaoMkt.style.backgroundColor = "rgb(246, 165, 45)";
-      botaoMkt.value = "ativado";
-      setor = "Marketing"
-      break;
-    case "rgb(229, 51, 36)":
-      console.log("GEP");
-      botaoGep.style.backgroundColor = "rgb(229, 51, 36)";
-      botaoGep.value = "ativado";
-      setor = "GEP"
-      break;
-    case "rgb(47, 153, 61)":
-      console.log("Pjt");
-      botaoPjt.style.backgroundColor = "rgb(47, 153, 61)";
-      botaoPjt.value = "ativado";
-      setor = "Projetos"
-      break;
-    case "rgb(41, 219, 226)":
-      console.log("Com");
-      botaoCom.style.backgroundColor = "rgb(41, 219, 226)";
-      botaoCom.value = "ativado";
-      setor = "Comercial"
-      break;
-  }
-  botaoColuna();
+    //criando botão adm fin
+    botaoAdm = document.createElement("button");
+    criarBotao(botaoAdm, "Adm Fin");
+    botaoMkt = document.createElement("button");
+    criarBotao(botaoMkt, "Marketing");
+    botaoPres = document.createElement("button");
+    criarBotao(botaoPres, "Presidência");
+    botaoGep = document.createElement("button");
+    criarBotao(botaoGep, "GEP");
+    botaoPjt = document.createElement("button");
+    criarBotao(botaoPjt, "Projetos");
+    botaoCom = document.createElement("button");
+    criarBotao(botaoCom, "Comercial");
+    corTitulo = clickedElement.querySelector(".taskCircle");
+    switch(corTitulo.style.backgroundColor)
+    {
+      case "rgb(139, 95, 164)":
+        console.log("pres");
+        botaoPres.style.backgroundColor = "rgb(139, 95, 164)";
+        botaoPres.value = "ativado";
+        setor = "Presidência"
+        break;
+      case "rgb(73, 87, 102)":
+        console.log("Adm");
+        botaoAdm.style.backgroundColor = "rgb(73, 87, 102)";
+        botaoAdm.value = "ativado";
+        setor = "Adm. Financeiro"
+        break;
+      case "rgb(246, 165, 45)":
+        console.log("Mkt");
+        botaoMkt.style.backgroundColor = "rgb(246, 165, 45)";
+        botaoMkt.value = "ativado";
+        setor = "Marketing"
+        break;
+      case "rgb(229, 51, 36)":
+        console.log("GEP");
+        botaoGep.style.backgroundColor = "rgb(229, 51, 36)";
+        botaoGep.value = "ativado";
+        setor = "GEP"
+        break;
+      case "rgb(47, 153, 61)":
+        console.log("Pjt");
+        botaoPjt.style.backgroundColor = "rgb(47, 153, 61)";
+        botaoPjt.value = "ativado";
+        setor = "Projetos"
+        break;
+      case "rgb(41, 219, 226)":
+        console.log("Com");
+        botaoCom.style.backgroundColor = "rgb(41, 219, 226)";
+        botaoCom.value = "ativado";
+        setor = "Comercial"
+        break;
+    }
+    botaoColuna();
 
-  if(comentario!==null)
-  {
-    comentario = clickedElement.querySelector(".comentario").innerText;
-    boxComentario.textContent = comentario;
+    if(comentario!==null)
+    {
+      comentario = clickedElement.querySelector(".comentario").innerText;
+      boxComentario.textContent = comentario;
+    }
+    else
+    {
+      comentario = document.createElement("div");
+      comentario.className = "comentario";
+      comentario.id = "comentario";
+      comentario.style.display = "none";
+      clickedElement.appendChild(comentario);
+    }
+    if(ativ!==null)
+    {
+      ativ = clickedElement.querySelector(".atividade").innerText;
+      boxAtiv.textContent = ativ;
+      console.log("pres1");
+    }
+    else
+    {
+      ativ = document.createElement("div");
+      ativ.className = "atividade";
+      ativ.style.display = "none";
+      clickedElement.appendChild(ativ);
+    }
+    if(responsavel!==null)
+    {
+      responsavel = clickedElement.querySelector(".responsavel").innerText;
+      boxResp.textContent = responsavel;
+    }
+    else
+    {
+      responsavel = document.createElement("div");
+      responsavel.className = "responsavel";
+      responsavel.style.display = "none";
+      clickedElement.appendChild(responsavel);
+    }
+    if(calendario!==null)
+    {
+      calendario = clickedElement.querySelector(".calendario").innerText;
+      console.log(calendario);
+      inputCalendario.value = calendario;
+    }
+    else
+    {
+      inputCalendario.value = "aaaa-mm-dd";
+      calendario = document.createElement("div");
+      calendario.className = "calendario";
+      calendario.id = "calendario";
+      calendario.style.display = "none";
+      clickedElement.appendChild(calendario);
+    }
   }
-  else
-  {
-    comentario = document.createElement("div");
-    comentario.className = "comentario";
-    comentario.id = "comentario";
-    comentario.style.display = "none";
-    clickedElement.appendChild(comentario);
-  }
-  if(ativ!==null)
-  {
-    ativ = clickedElement.querySelector(".atividade").innerText;
-    boxAtiv.textContent = ativ;
-    console.log("pres1");
-  }
-  else
-  {
-    ativ = document.createElement("div");
-    ativ.className = "atividade";
-    ativ.style.display = "none";
-    clickedElement.appendChild(ativ);
-  }
-  if(responsavel!==null)
-  {
-    responsavel = clickedElement.querySelector(".responsavel").innerText;
-    boxResp.textContent = responsavel;
-  }
-  else
-  {
-    responsavel = document.createElement("div");
-    responsavel.className = "responsavel";
-    responsavel.style.display = "none";
-    clickedElement.appendChild(responsavel);
-  }
-  if(calendario!==null)
-  {
-    calendario = clickedElement.querySelector(".calendario").innerText;
-    console.log(calendario);
-    inputCalendario.value = calendario;
-  }
-  else
-  {
-    inputCalendario.value = "aaaa-mm-dd";
-    calendario = document.createElement("div");
-    calendario.className = "calendario";
-    calendario.id = "calendario";
-    calendario.style.display = "none";
-    clickedElement.appendChild(calendario);
-  }
-  }
-
-  switch(corTitulo.style.backgroundColor)
-  {
-    case "rgb(139, 95, 164)":
-      botaoPres.style.backgroundColor = "rgb(139, 95, 164)";
-      botaoPres.value = "ativado";
-      sector="Presidência";
-      break;
-    case "rgb(73, 87, 102)":
-      botaoAdm.style.backgroundColor = "rgb(73, 87, 102)";
-      botaoAdm.value = "ativado";
-      sector="Adm. Financeiro";
-      break;
-    case "rgb(246, 165, 45)":
-      botaoMkt.style.backgroundColor = "rgb(246, 165, 45)";
-      botaoMkt.value = "ativado";
-      sector="Marketing";
-      break;
-    case "rgb(229, 51, 36)":
-      botaoGep.style.backgroundColor = "rgb(229, 51, 36)";
-      botaoGep.value = "ativado";
-      sector="GEP";
-      break;
-    case "rgb(47, 153, 61)":
-      botaoPjt.style.backgroundColor = "rgb(47, 153, 61)";
-      botaoPjt.value = "ativado";
-      sector="Projetos";
-      break;
-    case "rgb(41, 219, 226)":
-      botaoCom.style.backgroundColor = "rgb(41, 219, 226)";
-      botaoCom.value = "ativado";
-      sector="Comercial";
-      break;
-  }
-
 }
 
 function closeContainer() {
@@ -695,6 +660,9 @@ function closeContainer() {
 
   if(Card.querySelector(".tasktext").textContent !== "Escreva o nome da tarefa")
   {
+    console.log("cardService.update(tarefa, Card.id)");
+    console.log(cardService.update(tarefa, Card.id));
+
     Card.style.display = "initial";
 
     const computedStyle = window.getComputedStyle(Card);
@@ -712,7 +680,7 @@ function closeContainer() {
     }
     cardService.save(tarefa);
 
-    //cardService.update(tarefa, Card.id)
+    cardService.update(tarefa, Card.id)
   }
   else
   {
@@ -742,16 +710,22 @@ function cardHTMLtoJSON() {
   const computedStyle = window.getComputedStyle(Card);
   const orderValue = computedStyle.getPropertyValue('order');
 
-  return {
-    title: Card.querySelector(".tasktext").textContent,
-    description: Card.querySelector(".comentario").textContent,
-    comment: Card.querySelector(".atividade").textContent,
-    responsable: Card.querySelector(".responsavel").textContent,
-    limitDate: Card.querySelector(".calendario").textContent,
+  const tarefa = {
+    title: Card.querySelector(".tituloCard").textContent,
+    description: "testeDesc",
+    comment: "testeComm",
+    responsable: Card.querySelector(".boxResponsavel").textContent,
+    limitDate: Card.querySelector(".InputCalendario").textContent,
     order: orderValue,
     column: ColunaCard.id,
     sector: sector,
   }
+
+  console.log(tarefa);
+  console.log(Card.id);
+  cardService.update(tarefa, Card.id);
+
+  return tarefa;
 }
 
 
